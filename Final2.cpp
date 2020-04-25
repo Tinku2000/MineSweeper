@@ -2,15 +2,16 @@
 #include <vector>
 #include <time.h>
 #include <unistd.h>
+#include <stdlib.h>
 using namespace std; 
 
 class MineWindow
 {
 private:
 	int x;																					//size of board
-	vector<vector <int>> board;																//stores the STATE of each cell of board
-	vector<vector <int>> open;
-	vector<vector <int>> flag;	
+	vector<vector <int> > board;																//stores the STATE of each cell of board
+	vector<vector <int> > open;
+	vector<vector <int> > flag;	
 	int numberofmines;	
 	int numberofflags=0;
 	int numberofopen=0;			
@@ -384,7 +385,7 @@ public:
 		{
 			cout<<"The Entered Cell is already Opened 😒";
 			cout.flush();
-			usleep(1000*1500);
+			usleep(1000*2000);
 			system("clear");
 			Create();
 			return 0;
@@ -481,10 +482,10 @@ int main()
 		cout<<"R";
 		cout.flush();
 		usleep(1000*50);
-		cout<<"💣";
+		cout<<"💣 ";
 		cout.flush();
 		usleep(1000*50);
-		cout<<"💣";
+		cout<<"💣 ";
 		cout.flush();
 		usleep(1000*50);
 		cout<<"💣";
