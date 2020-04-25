@@ -23,12 +23,13 @@ public:
 		system("clear");
 		cout<<"Enter the Size of Board: ";
 		cin>>x;
-		while(x<2)
+		if(x<2)
 		{
 			cout<<endl;
 			cout<<"⚠️  Enter an Integer Greater than 1\n";
-			cout<<"\nEnter the Size of Board: ";
-			cin>>x;
+			cout.flush();
+			usleep(1000*1000);
+			Entry();
 		}
 	}
 	void Initialize()																		//populating 2-d vector with intial values
@@ -321,6 +322,19 @@ public:
 		}
 		if(count==numberofopen)
 		{
+			for(int i=0;i<x;i++)
+			{
+				for(int j=0;j<x;j++)
+				{
+					if(board[i][j]==(-1))
+					{
+						flag[i][j]=1;
+						numberofflags++;
+					}
+				}
+			}
+			system("clear");
+			Create();
 			return 2;
 		}
 		return 0;
