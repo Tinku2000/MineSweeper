@@ -20,11 +20,13 @@ public:
 	void Entry()																			//input of Size of board
 	{
 		system("clear");
+		cout<<"\t\t\t\t"; 
 		cout<<"Enter the Size of Board: ";
 		cin>>x;
 		if(x<2)
 		{
 			cout<<endl;
+			cout<<"\t\t\t\t\t\t"; 
 			cout<<"⚠️  Enter an Integer Greater than 1\n";
 			cout.flush();
 			usleep(1000*2500);
@@ -157,6 +159,7 @@ public:
 					count++;
 					if(count==(x*x*x))
 					{
+						cout<<"\t\t\t\t\t";
 						cout<<"No more Non-Mine Cells to Open 😉";
 						cout<<endl;
 						hint++;
@@ -172,6 +175,7 @@ public:
 		}
 		else
 		{
+			cout<<"\t\t\t\t\t";
 			cout<<"You are out of Hints 😞";
 			cout.flush();
 			usleep(1000*2500);
@@ -182,6 +186,7 @@ public:
 	void Create()																			//prints the board in terminal 
 	{
 		system("clear");
+		cout<<"\t\t\t\t\t   "; 
 		for(int i=0;i<x;i++)
 		{
 			cout<<"  "<<(i+1);
@@ -189,9 +194,11 @@ public:
 		cout<<"\n";
 		for(int i=0;i<x;i++)
 		{
+			cout<<"\t\t\t\t\t   "; 
 			cout<<(i+1);
 			for(int j=0;j<x;j++)
 			{
+
 					if(board[i][j]==(-2))
 					{
 						cout<<"|💣";
@@ -211,15 +218,20 @@ public:
 			}
 			cout<<"|"<<endl;
 		}
-		cout<<"Total Number of Mines="<<((x*x)/4)<<"   "<<"Number of Flags used="<<numberofflags<<"   "<<"Number of Hints left="<<hint<<endl;
+		cout<<endl;
+		cout<<"\t\tTotal Number of Mines="<<((x*x)/4)<<"   "<<"Number of Flags used="<<numberofflags<<"   "<<"Number of Hints left="<<hint<<endl;
 		
 	}
 	int update1(int row,int col)
 	{
 		if(row<0 || row>=x || col<0 || col>=x)
 		{
-			cout<<"The Entered Co-Ordinates are out of Range 😇"<<endl;
-			cout<<"Please Try Again"<<endl;
+			cout<<"\t\t\t\t";
+			cout<<"The Entered Co-Ordinates are out of Range 😇";
+			cout<<endl;
+			cout<<"\t\t\t\t";
+			cout<<"Please Try Again";
+			cout<<endl;
 			cout.flush();
         	usleep(1000*2500);
 			system("clear");
@@ -228,8 +240,10 @@ public:
 		}
 		if(open[row][col]==1)
 		{
+			cout<<"\t\t\t\t";
 			cout<<"The Entered Cell has already been Opened 😇";
 			cout<<endl;
+			cout<<"\t\t\t\t";
 			cout<<"Enter a different Cell";
 			cout.flush();
         	usleep(1000*2500);
@@ -239,8 +253,10 @@ public:
 		}
 		if(flag[row][col]==1)
 		{
+			cout<<"\t\t\t\t";
 			cout<<"The Entered Cell has already been Flagged 😇";
 			cout<<endl;
+			cout<<"\t\t\t\t";
 			cout<<"Enter a different Cell";
 			cout.flush();
         	usleep(1000*2500);
@@ -281,8 +297,12 @@ public:
 	{
 		if(row<0 || row>=x || col<0 || col>=x)
 		{
-			cout<<"The Entered Co-Ordinates are out of Range 😇"<<endl;
-			cout<<"Please Try Again"<<endl;
+			cout<<"\t\t\t\t";
+			cout<<"The Entered Co-Ordinates are out of Range 😇";
+			cout<<endl;
+			cout<<"\t\t\t\t";
+			cout<<"Please Try Again";
+			cout<<endl;
 			cout.flush();
         	usleep(1000*2500);
 			system("clear");
@@ -291,8 +311,10 @@ public:
 		}
 		if(open[row][col]==1)
 		{
+			cout<<"\t\t\t\t";
 			cout<<"The Entered Cell has already been Opened 😇";
 			cout<<endl;
+			cout<<"\t\t\t\t";
 			cout<<"Enter a different Cell";
 			cout.flush();
         	usleep(1000*2500);
@@ -302,8 +324,10 @@ public:
 		}
 		if(flag[row][col]==1)
 		{
+			cout<<"\t\t\t\t";
 			cout<<"The Entered Cell has already been Flagged 😇";
 			cout<<endl;
+			cout<<"\t\t\t\t";
 			cout<<"Enter a different Cell";
 			cout.flush();
         	usleep(1000*2500);
@@ -383,6 +407,7 @@ public:
 	{
 		if(open[row][col]==1)
 		{
+			cout<<"\t\t\t\t\t";
 			cout<<"The Entered Cell is already Opened 😒";
 			cout.flush();
 			usleep(1000*2000);
@@ -392,9 +417,10 @@ public:
 		}
 		if(flag[row][col]!=1)
 		{
+			cout<<"\t\t\t\t\t";
 			cout<<"The Entered Cell isn't Flagged 😒";
 			cout.flush();
-			usleep(1000*1500);
+			usleep(1000*2000);
 			system("clear");
 			Create();
 			return 0;
@@ -415,7 +441,8 @@ int main()
 	while(1)
 	{
 		srand(time(0));
-		system("clear");         
+		system("clear");   
+		cout<<"\t\t\t\t\t\t";      
 		cout<<"W";
 		cout.flush();
 		usleep(1000*50);
@@ -492,21 +519,26 @@ int main()
 		cout.flush();
 		usleep(1000*500);
 		cout<<endl;
+		cout<<"\t\t\t\t\t\t"; 
 		cout<<"Press 1 to Play";
 		cout<<endl;
 		cout.flush();
 		usleep(1000*500);
+		cout<<"\t\t\t\t\t\t"; 
 		cout<<"Press 2 to EXIT";
 		cout<<endl;
 		cout.flush();
 		usleep(1000*500);
+		cout<<"\t\t\t\t\t\t"; 
 		cout<<"Enter :";
 		int i;
 		cin>>i;
 		while(i!=1 && i!=2)
 		{
+			cout<<"\t\t\t\t\t\t"; 
 			cout<<"Please select 1 (or) 2 😇";
 			cout<<endl;
+			cout<<"\t\t\t\t\t\t"; 
 			cout<<"Enter :";
 			cin>>i;
 		}
@@ -519,6 +551,8 @@ int main()
 			MineWindow w;
 			w.Entry();
 			w.Initialize();
+			cout<<endl;
+			cout<<"\t\t\t\t"; 
 			cout<<"A Cell opens in...";
 			cout.flush();
 			usleep(1000*1000);
@@ -535,24 +569,35 @@ int main()
 			int flag=0;
 			while(flag==0)
 			{
+				cout<<endl;
+				cout<<"\t\t\t\t\t"; 
 				cout<<"Press 1 to Open a Cell";
 				cout<<endl;
+				cout<<"\t\t\t\t\t";
 				cout<<"Press 2 to Flag a Cell";
 				cout<<endl;
+				cout<<"\t\t\t\t\t";
 				cout<<"Press 3 to use Hint";
 				cout<<endl;
+				cout<<"\t\t\t\t\t";
 				cout<<"Press 4 to UnFlag";
 				cout<<endl;
+				cout<<endl;
+				cout<<"\t\t\t\t\t";
 				cout<<"Enter :";
 				int ii;
 				cin>>ii;
+				cout<<endl;
 				if(ii!=1 && ii!=2 && ii!=3 && ii!=4)
 				{
+					cout<<"\t\t\t\t\t";
 					cout<<"Please select 1 (or) 2 (or) 3 (or) 4 😇";
 					cout<<endl;
+					cout<<"\t\t\t\t\t";
 					cout<<"Try Again"<<endl;
 					cout.flush();
 					usleep(1000*1000);
+					cout<<"\t\t\t\t\t";
 					cout<<"wait..";
 					cout.flush();
 					usleep(1000*1000);
@@ -568,11 +613,13 @@ int main()
 				}
 				if(ii==1)
 				{
+					cout<<"\t\t\t\t";
 					cout<<"Enter the row number of the Cell to be Opened :";
 					int row;
 					cin>>row;
 					row=row-1;
 					//cout<<endl;
+					cout<<"\t\t\t\t";
 					cout<<"Enter the column number of the Cell to be Opened :";
 					int col;
 					cin>>col;
@@ -580,6 +627,7 @@ int main()
 					flag=w.update1(row,col);
 					if(flag==1)
 					{
+						cout<<"\t\t\t\t\t";
 						cout<<"G";
 						cout.flush();
 	        			usleep(1000*400);
@@ -625,6 +673,7 @@ int main()
 						cout<<" ☹️";
 						cout.flush();
 						cout<<endl;
+						cout<<"\t\t\t\t\t";
 						cout<<"T";
 						cout.flush();
 	        			usleep(1000*200);
@@ -657,6 +706,7 @@ int main()
 					}
 					if(flag==2)
 					{
+						cout<<"\t\t\t\t\t";
 						cout<<"W";
 						cout.flush();
 	        			usleep(1000*200);
@@ -667,8 +717,6 @@ int main()
 						cout.flush();
 	        			usleep(1000*200);
 						cout<<"O";
-						cout.flush();
-	        			usleep(1000*200);
 						cout.flush();
 	        			usleep(1000*200);
 						cout<<"O";
@@ -690,6 +738,7 @@ int main()
 						cout.flush();
 	        			usleep(1000*200);
 	        			cout<<endl;
+	        			cout<<"\t\t\t\t\t";
 	        			cout<<"Y";
 						cout.flush();
 	        			usleep(1000*300);
@@ -726,11 +775,13 @@ int main()
 				}
 				if(ii==2)
 				{
+					cout<<"\t\t\t\t";
 					cout<<"Enter the row number of the Cell to be Flagged :";
 					int row;
 					cin>>row;
 					row=row-1;
 					//cout<<endl;
+					cout<<"\t\t\t\t";
 					cout<<"Enter the column number of the Cell to be Flagged :";
 					int col;
 					cin>>col;
@@ -742,6 +793,7 @@ int main()
 					}
 					if(flag==1)
 					{
+						cout<<"\t\t\t\t\t";
 						cout<<"G";
 						cout.flush();
 	        			usleep(1000*400);
@@ -787,6 +839,7 @@ int main()
 						cout<<" ☹️";
 						cout.flush();
 						cout<<endl;
+						cout<<"\t\t\t\t\t";
 						cout<<"T";
 						cout.flush();
 	        			usleep(1000*200);
@@ -815,6 +868,7 @@ int main()
 					}
 					if(flag==2)
 					{
+						cout<<"\t\t\t\t\t";
 						cout<<"W";
 						cout.flush();
 	        			usleep(1000*200);
@@ -848,6 +902,7 @@ int main()
 						cout.flush();
 	        			usleep(1000*200);
 	        			cout<<endl;
+	        			cout<<"\t\t\t\t\t";
 	        			cout<<"Y";
 						cout.flush();
 	        			usleep(1000*300);
@@ -888,11 +943,13 @@ int main()
 				}
 				if(ii==4)
 				{
+					cout<<"\t\t\t\t";
 					cout<<"Enter the row number of the Cell to be UnFlagged :";
 					int row;
 					cin>>row;
 					row=row-1;
 					//cout<<endl;
+					cout<<"\t\t\t\t";
 					cout<<"Enter the column number of the Cell to be UnFlagged :";
 					int col;
 					cin>>col;
