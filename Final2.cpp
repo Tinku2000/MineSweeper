@@ -27,7 +27,7 @@ public:
 			cout<<endl;
 			cout<<"⚠️  Enter an Integer Greater than 1\n";
 			cout.flush();
-			usleep(1000*1000);
+			usleep(1000*2500);
 			Entry();
 		}
 	}
