@@ -2,8 +2,6 @@
 #include <vector>
 #include <time.h>
 #include <unistd.h>
-#include <termios.h>
-#include <ncurses.h>
 using namespace std; 
 
 class MineWindow
