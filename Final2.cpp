@@ -149,9 +149,21 @@ public:
 		{
 			hint--;
 			int j=(rand() % (x*x));
+			int count=0;
 				while(board[j%x][j/x]==(-1) || open[j%x][j/x]==1)
 				{
 					j=(rand() % (x*x));
+					count++;
+					if(count==(x*x*x))
+					{
+						cout<<"No more Non-Mine Cells to Open 😉";
+						cout<<endl;
+						hint++;
+						cout.flush();
+						usleep(1000*2500);
+						Create();
+						return;;
+					}
 				}
 			open[j%x][j/x]=1;
 			numberofopen++;
