@@ -21,12 +21,12 @@ public:
 	{
 		system("clear");
 		cout<<"\t\t\t\t"; 
-		cout<<"Enter the Size of Board: ";
+		cout<<"Enter the Size of Board(>1): ";
 		cin>>x;
 		if(x<2)
 		{
 			cout<<endl;
-			cout<<"\t\t\t\t\t\t"; 
+			cout<<"\t\t\t\t"; 
 			cout<<"⚠️  Enter an Integer Greater than 1\n";
 			cout.flush();
 			usleep(1000*2500);
