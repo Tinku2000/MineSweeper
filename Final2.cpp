@@ -358,6 +358,36 @@ public:
 		}
 		return 0;
 	}
+	int UnFlag(int row,int col)
+	{
+		if(open[row][col]==1)
+		{
+			cout<<"The Entered Cell is already Opened 😒";
+			cout.flush();
+			usleep(1000*1500);
+			system("clear");
+			Create();
+			return 0;
+		}
+		if(flag[row][col]!=1)
+		{
+			cout<<"The Entered Cell isn't Flagged 😒";
+			cout.flush();
+			usleep(1000*1500);
+			system("clear");
+			Create();
+			return 0;
+		}
+		if(flag[row][col]==1)
+		{
+			flag[row][col]=0;
+			numberofflags--;
+			system("clear");
+			Create();
+			return 0;
+		}
+		return 0;
+	}
 };
 int main()
 {
@@ -490,12 +520,14 @@ int main()
 				cout<<endl;
 				cout<<"Press 3 to use Hint";
 				cout<<endl;
+				cout<<"Press 4 to UnFlag";
+				cout<<endl;
 				cout<<"Enter :";
 				int ii;
 				cin>>ii;
-				if(ii!=1 && ii!=2 && ii!=3)
+				if(ii!=1 && ii!=2 && ii!=3 && ii!=4)
 				{
-					cout<<"Please select 1 (or) 2 (or) 3 😇";
+					cout<<"Please select 1 (or) 2 (or) 3 (or) 4 😇";
 					cout<<endl;
 					cout<<"Try Again"<<endl;
 					cout.flush();
@@ -832,6 +864,19 @@ int main()
 				if(ii==3)
 				{
 					w.Open();
+				}
+				if(ii==4)
+				{
+					cout<<"Enter the row number of the Cell to be UnFlagged :";
+					int row;
+					cin>>row;
+					row=row-1;
+					//cout<<endl;
+					cout<<"Enter the column number of the Cell to be UnFlagged :";
+					int col;
+					cin>>col;
+					col=col-1;
+					flag=w.UnFlag(row,col);
 				}
 			}
 	}
