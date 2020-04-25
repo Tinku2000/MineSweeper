@@ -3,4 +3,4 @@ An Object Oriented Programming course Mini-project, Implementing the standard Mi
 
 This is a simple Command based implementation with Text-based Graphics
 
-->ncurses.h file is required,run "sudo apt-get install libncurses-dev" to install header file
+(ncurses.h file is required,run "sudo apt-get install libncurses-dev" to install header file)
