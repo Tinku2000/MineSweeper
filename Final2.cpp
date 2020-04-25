@@ -239,7 +239,17 @@ public:
 		}
 		if(board[row][col]==(-1))
 		{
-			board[row][col]=(-2);
+			for(int i=0;i<x;i++)
+			{
+				for(int j=0;j<x;j++)
+				{
+
+					if(board[i][j]==(-1))
+					{
+						board[i][j]=(-2);
+					}
+				}
+			}	
 			Create();
 			return 1;
 		}
