@@ -21,7 +21,11 @@ public:
 	{
 		system("clear");
 		cout<<"\t\t\t\t"; 
-		cout<<"Enter the Size of Board(>1): ";
+		cout<<"Zoom in using ctrl+ until this text is in the Middle of the screen";
+		cout<<endl;
+		cout.flush();
+		cout<<"\t\t\t\t"; 
+		cout<<"Enter the Size of Board(>1)(preferably <=25): ";
 		cin>>x;
 		if(x<2)
 		{
