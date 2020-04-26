@@ -189,13 +189,28 @@ public:
 		cout<<"\t\t\t\t\t   "; 
 		for(int i=0;i<x;i++)
 		{
-			cout<<"  "<<(i+1);
+				if((i+1)<11)
+				{
+					cout<<"  "<<(i+1);
+				}
+				else
+				{
+					cout<<" "<<(i+1);
+				}
+			
 		}
 		cout<<"\n";
 		for(int i=0;i<x;i++)
 		{
 			cout<<"\t\t\t\t\t   "; 
-			cout<<(i+1);
+			if((i+1)<10)
+			{
+				cout<<(i+1);
+			}
+			else
+			{
+				cout<<"\b"<<(i+1);
+			}
 			for(int j=0;j<x;j++)
 			{
 
