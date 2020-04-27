@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <time.h>
+#include <string> 
 #include <unistd.h>
 #include <stdlib.h>
+#include <sstream>
 using namespace std; 
 
 class MineWindow
@@ -26,7 +28,9 @@ public:
 		cout.flush();
 		cout<<"\t\t\t\t"; 
 		cout<<"Enter the Size of Board(>1)(preferably <=25): ";
-		cin>>x;
+		string inp;
+		cin>>inp;
+		istringstream(inp)>>x;
 		if(x<2)
 		{
 			cout<<endl;
@@ -424,6 +428,20 @@ public:
 	}
 	int UnFlag(int row,int col)
 	{
+		if(row<0 || row>=x || col<0 || col>=x)
+		{
+			cout<<"\t\t\t\t";
+			cout<<"The Entered Co-Ordinates are out of Range 😇";
+			cout<<endl;
+			cout<<"\t\t\t\t";
+			cout<<"Please Try Again";
+			cout<<endl;
+			cout.flush();
+        	usleep(1000*2500);
+			system("clear");
+			Create();
+			return 0;
+		}
 		if(open[row][col]==1)
 		{
 			cout<<"\t\t\t\t\t";
@@ -550,8 +568,10 @@ int main()
 		usleep(1000*500);
 		cout<<"\t\t\t\t\t\t"; 
 		cout<<"Enter :";
+		string inp;
+		cin>>inp;
 		int i;
-		cin>>i;
+		istringstream(inp) >> i;
 		while(i!=1 && i!=2)
 		{
 			cout<<"\t\t\t\t\t\t"; 
@@ -559,7 +579,8 @@ int main()
 			cout<<endl;
 			cout<<"\t\t\t\t\t\t"; 
 			cout<<"Enter :";
-			cin>>i;
+			cin>>inp;
+			istringstream(inp)>>i;
 		}
 		if(i==2)
 		{
@@ -605,7 +626,8 @@ int main()
 				cout<<"\t\t\t\t\t";
 				cout<<"Enter :";
 				int ii;
-				cin>>ii;
+				cin>>inp;
+				istringstream(inp)>>ii;
 				cout<<endl;
 				if(ii!=1 && ii!=2 && ii!=3 && ii!=4)
 				{
@@ -635,13 +657,15 @@ int main()
 					cout<<"\t\t\t\t";
 					cout<<"Enter the row number of the Cell to be Opened :";
 					int row;
-					cin>>row;
+					cin>>inp;
+					istringstream(inp)>>row;
 					row=row-1;
 					//cout<<endl;
 					cout<<"\t\t\t\t";
 					cout<<"Enter the column number of the Cell to be Opened :";
 					int col;
-					cin>>col;
+					cin>>inp;
+					istringstream(inp)>>col;
 					col=col-1;
 					flag=w.update1(row,col);
 					if(flag==1)
@@ -797,13 +821,15 @@ int main()
 					cout<<"\t\t\t\t";
 					cout<<"Enter the row number of the Cell to be Flagged :";
 					int row;
-					cin>>row;
+					cin>>inp;
+					istringstream(inp)>>row;
 					row=row-1;
 					//cout<<endl;
 					cout<<"\t\t\t\t";
 					cout<<"Enter the column number of the Cell to be Flagged :";
 					int col;
-					cin>>col;
+					cin>>inp;
+					istringstream(inp)>>col;
 					col=col-1;
 					flag=w.update2(row,col);
 					if(flag==2)
@@ -965,13 +991,15 @@ int main()
 					cout<<"\t\t\t\t";
 					cout<<"Enter the row number of the Cell to be UnFlagged :";
 					int row;
-					cin>>row;
+					cin>>inp;
+					istringstream(inp)>>row;
 					row=row-1;
 					//cout<<endl;
 					cout<<"\t\t\t\t";
 					cout<<"Enter the column number of the Cell to be UnFlagged :";
 					int col;
-					cin>>col;
+					cin>>inp;
+					istringstream(inp)>>col;
 					col=col-1;
 					flag=w.UnFlag(row,col);
 				}
