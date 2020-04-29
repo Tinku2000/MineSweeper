@@ -17,13 +17,14 @@ private:
 	int numberofmines;	
 	int numberofflags=0;
 	int numberofopen=0;			
-	int hint=3;										
+	int hint;									
 public:
 	void Entry()																			//input of Size of board
 	{
 		system("clear");
 		cout<<"\t\t\t\t"; 
 		cout<<"Zoom in using ctrl+ until this text is in the Middle of the screen";
+		cout<<endl;
 		cout<<endl;
 		cout.flush();
 		cout<<"\t\t\t\t"; 
@@ -39,6 +40,14 @@ public:
 			cout.flush();
 			usleep(1000*2500);
 			Entry();
+		}
+		if(x==2)
+		{
+			hint=3;
+		}
+		else
+		{
+			hint=4;
 		}
 	}
 	void Initialize()																		//populating 2-d vector with intial values
@@ -622,6 +631,9 @@ int main()
 				cout<<"\t\t\t\t\t";
 				cout<<"Press 4 to UnFlag";
 				cout<<endl;
+				cout<<"\t\t\t\t\t";
+				cout<<"Press 5 to Giveup";
+				cout<<endl;
 				cout<<endl;
 				cout<<"\t\t\t\t\t";
 				cout<<"Enter :";
@@ -629,10 +641,10 @@ int main()
 				cin>>inp;
 				istringstream(inp)>>ii;
 				cout<<endl;
-				if(ii!=1 && ii!=2 && ii!=3 && ii!=4)
+				if(ii!=1 && ii!=2 && ii!=3 && ii!=4 && ii!=5)
 				{
 					cout<<"\t\t\t\t\t";
-					cout<<"Please select 1 (or) 2 (or) 3 (or) 4 😇";
+					cout<<"Please select 1 (or) 2 (or) 3 (or) 4 (or) 5 😇";
 					cout<<endl;
 					cout<<"\t\t\t\t\t";
 					cout<<"Try Again"<<endl;
@@ -651,6 +663,10 @@ int main()
 					system("clear");
 					w.Create();
 					continue;
+				}
+				if(ii==5)
+				{
+					break;
 				}
 				if(ii==1)
 				{
