@@ -484,9 +484,9 @@ public:
 };
 int main()
 {
+	srand(time(0));
 	while(1)
 	{
-		srand(time(0));
 		system("clear");   
 		cout<<"\t\t\t\t\t\t";      
 		cout<<"W";
